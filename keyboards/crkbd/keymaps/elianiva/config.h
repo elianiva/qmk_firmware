@@ -28,25 +28,57 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-//#define QUICK_TAP_TERM 0
-#define TAPPING_TERM 150
+// Make tap-hold keys trigger whenever another key is pressed.
+#define PERMISSIVE_HOLD
 
-#define AUTO_SHIFT_TIMEOUT 150
-#define HOLD_ON_OTHER_KEY_PRESS
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+// prevents repeating the same key when tapping the key twice
+#define QUICK_TAP_TERM 0
+
+// Sets the duration in milliseconds before a tap becomes a hold
+#undef TAPPING_TERM
+#define TAPPING_TERM 180
+
+// Saves memory by reducing layers count
+#define LAYER_STATE_8BIT
+
+// Sets the mouse key speed to constant
+#define MK_3_SPEED
+// Hold to accelerate mouse keys
+#define MK_MOMENTARY_ACCEL
+// combined acceleration
+#define MK_COMBINED
+
+// Mouse key acceleration
+#define MK_C_INTERVAL_0 8
+#define MK_C_INTERVAL_1 16
+#define MK_C_INTERVAL_2 32
+
+// Mouse key speed and acceleration.
+#undef MOUSEKEY_DELAY
+#define MOUSEKEY_DELAY          0
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL       16
+#undef MOUSEKEY_WHEEL_DELAY
+#define MOUSEKEY_WHEEL_DELAY    0
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED      6
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX    64
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
     #define RGBLIGHT_EFFECT_RAINBOW_MOOD
     #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_EFFECT_SNAKE
-    #define RGBLIGHT_EFFECT_KNIGHT
-    #define RGBLIGHT_EFFECT_CHRISTMAS
+    // #define RGBLIGHT_EFFECT_SNAKE
+    // #define RGBLIGHT_EFFECT_KNIGHT
+    // #define RGBLIGHT_EFFECT_CHRISTMAS
     #define RGBLIGHT_EFFECT_STATIC_GRADIENT
     #define RGBLIGHT_EFFECT_RGB_TEST
     #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
+    // #define RGBLIGHT_EFFECT_TWINKLE
     #define RGBLIGHT_LIMIT_VAL 120
     #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
+    #define RGBLIGHT_SAT_STEP 10
+    #define RGBLIGHT_VAL_STEP 10
 #endif
