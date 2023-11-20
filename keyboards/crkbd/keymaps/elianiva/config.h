@@ -29,15 +29,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 // Make tap-hold keys trigger whenever another key is pressed.
-#define PERMISSIVE_HOLD
-
+#define PERMISSIVE_HOLD_PER_KEY
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 // prevents repeating the same key when tapping the key twice
 #define QUICK_TAP_TERM 0
 
 // Sets the duration in milliseconds before a tap becomes a hold
-#undef TAPPING_TERM
-#define TAPPING_TERM 180
+#define TAPPING_TERM_PER_KEY
+#define TAPPING_TERM 200
 
 // Saves memory by reducing layers count
 #define LAYER_STATE_8BIT
@@ -79,7 +78,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #undef RGBLIGHT_EFFECT_RGB_TEST
     #undef RGBLIGHT_EFFECT_ALTERNATING
     #undef RGBLIGHT_EFFECT_TWINKLE
-    #define RGBLIGHT_LIMIT_VAL 120
+    #define RGBLIGHT_LIMIT_VAL 80
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 10
     #define RGBLIGHT_VAL_STEP 10
