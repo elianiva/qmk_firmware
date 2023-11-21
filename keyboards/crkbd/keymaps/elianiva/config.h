@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 
 // Saves memory by reducing layers count
-#define LAYER_STATE_8BIT
+#define LAYER_STATE_16BIT
 
 // Sets the mouse key speed to constant
 #define MK_3_SPEED

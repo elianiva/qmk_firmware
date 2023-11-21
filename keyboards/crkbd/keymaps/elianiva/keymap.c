@@ -21,7 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "features/achordion.h"
 
 enum layer_names {
-    _BASE,
+    _QWERTY,
+    _COLEMAK,
+    _GAMING,
     _NUM,
     _NAV,
     _MEDIA,
@@ -42,23 +44,61 @@ enum layer_names {
 #define KC_CAPW QK_CAPS_WORD_TOGGLE
 
 // HOME ROW MODS
-// LEFT
+// LEFT - QWERTY
 #define GUI_A LGUI_T(KC_A)
 #define ALT_S LALT_T(KC_S)
 #define CTL_D LCTL_T(KC_D)
 #define SFT_F LSFT_T(KC_F)
-// RIGHT
+// LEFT - COLEMAK
+#define ALT_R LALT_T(KC_R)
+#define CTL_S LCTL_T(KC_S)
+#define SHFT_T LSFT_T(KC_T)
+// RIGHT - QWERTY
 #define SFT_J RSFT_T(KC_J)
 #define CTL_K RCTL_T(KC_K)
 #define ALT_L LALT_T(KC_L)
 #define GUI_QUOT RGUI_T(KC_QUOT)
+// RIGHT - COLEMAK
+#define SFT_N RSFT_T(KC_N)
+#define CTL_E RCTL_T(KC_E)
+#define ALT_I LALT_T(KC_I)
+#define GUI_O RGUI_T(KC_O)
+
+// Layer Toggle
+#define L_QWERTY TG(_QWERTY)
+#define L_COLEMAK TG(_COLEMAK)
+#define L_GAMING TG(_GAMING)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT_split_3x6_3(
+    [_QWERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   GUI_A,   ALT_S,   CTL_D,   SFT_F,    KC_G,                         KC_H,   SFT_J,   CTL_K,   ALT_L,GUI_QUOT, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        ESC_MEDIA,TAB_NAV,ENT_MOUSE,    SPC_SYM,BSPC_NUM, DEL_FUN
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+    [_COLEMAK] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,   GUI_A,   ALT_R,   CTL_S,  SHFT_T,    KC_G,                         KC_M,   SFT_N,   CTL_E,   ALT_I,   GUI_O, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        ESC_MEDIA,TAB_NAV,ENT_MOUSE,    SPC_SYM,BSPC_NUM, DEL_FUN
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+    [_GAMING] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -80,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FUN] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_BOOT,  KC_F12,   KC_F7,   KC_F8,   KC_F9, KC_PSCR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, QK_BOOT,
+      QK_BOOT,  KC_F12,   KC_F7,   KC_F8,   KC_F9, KC_PSCR,                     XXXXXXX,L_QWERTY,L_COLEMAK,L_GAMING, XXXXXXX, QK_BOOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  KC_F11,   KC_F4,   KC_F5,   KC_F6, XXXXXXX,                      XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -230,29 +270,35 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 void oled_render_layer_state(void) {
     oled_write_ln_P(PSTR("Layer"), false);
     switch (get_highest_layer(default_layer_state | layer_state)) {
-        case _BASE:
-            oled_write_ln_P(PSTR("QWRTY"), false);
+        case _QWERTY:
+            oled_write_P(PSTR("QWRTY"), false);
+            break;
+        case _COLEMAK:
+            oled_write_P(PSTR("COLMK"), false);
+            break;
+        case _GAMING:
+            oled_write_P(PSTR("GAME "), false);
             break;
         case _NUM:
-            oled_write_ln_P(PSTR(" NUM "), false);
+            oled_write_P(PSTR(" NUM "), false);
             break;
         case _SYM:
-            oled_write_ln_P(PSTR(" SYM "), false);
+            oled_write_P(PSTR(" SYM "), false);
             break;
         case _NAV:
-            oled_write_ln_P(PSTR(" NAV "), false);
+            oled_write_P(PSTR(" NAV "), false);
             break;
         case _MEDIA:
-            oled_write_ln_P(PSTR("MEDIA"), false);
+            oled_write_P(PSTR("MEDIA"), false);
             break;
         case _MOUSE:
-            oled_write_ln_P(PSTR("MOUSE"), false);
+            oled_write_P(PSTR("MOUSE"), false);
             break;
         case _FUN:
-            oled_write_ln_P(PSTR(" FUN "), false);
+            oled_write_P(PSTR(" FUN "), false);
             break;
         default:
-            oled_write_ln_P(PSTR("UNDEF"), false);
+            oled_write_P(PSTR("UNDEF"), false);
     }
 
     oled_write_ln_P(PSTR("-----"), false);
