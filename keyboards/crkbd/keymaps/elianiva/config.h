@@ -53,6 +53,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MK_C_INTERVAL_1 16
 #define MK_C_INTERVAL_2 32
 
+// enable wpm counter
+#define SPLIT_WPM_ENABLE
+
 // Mouse key speed and acceleration.
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY 0

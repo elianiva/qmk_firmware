@@ -18,5 +18,5 @@ LTO_ENABLE = yes            # Enable link-time optimization
 TAP_DANCE_ENABLE = no       # Enable tap dance
 OLED_ENABLE = yes           # Enable OLED support
 CAPS_WORD_ENABLE = yes      # Enable caps word
-
-SRC += features/achordion.c
+WPM_ENABLE = yes
+SRC += ./features/achordion/achordion.c ./features/oled/bocchi.c ./features/oled/oled.c
