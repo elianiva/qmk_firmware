@@ -12,7 +12,7 @@ led_t led_usb_state = {
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (!is_keyboard_master()) {
-        return OLED_ROTATION_270;
+        return OLED_ROTATION_180;
     }
     return OLED_ROTATION_270;
 }
@@ -78,7 +78,7 @@ bool oled_task_user(void) {
         oled_render_layer_state();
         render_bocchi(0, 10);
     } else {
-        oled_render_wpm();
+        render_bocchi_logo();
     }
     return false;
 }
