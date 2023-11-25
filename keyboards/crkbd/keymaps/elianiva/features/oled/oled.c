@@ -26,9 +26,9 @@ void render_layer_state(void) {
         case _QWERTY:
             oled_write_P(PSTR("QWRTY"), false);
             break;
-        case _COLEMAK:
-            oled_write_P(PSTR("COLMK"), false);
-            break;
+        // case _COLEMAK:
+        //     oled_write_P(PSTR("COLMK"), false);
+        //     break;
         case _GAMING:
             oled_write_P(PSTR("GAME "), false);
             break;
