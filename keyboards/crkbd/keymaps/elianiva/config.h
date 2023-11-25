@@ -86,3 +86,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_SAT_STEP 10
     #define RGBLIGHT_VAL_STEP 10
 #endif
+
+#define OLED_FONT_H "keyboards/crkbd/keymaps/elianiva/features/oled/bocchifont.c"
