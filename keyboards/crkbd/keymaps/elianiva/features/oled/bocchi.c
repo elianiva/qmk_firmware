@@ -4,7 +4,7 @@
 uint8_t current_bocchi_frame = 0;
 uint32_t anim_bocchi_timer = 0;
 
-void render_bocchi_logo(void) {
+void render_kessoku_logo(void) {
     static const char PROGMEM kessoku_logo[] = {
         0x80, 0x81, 0x82, 0x83, 0x84,
         0xa0, 0xa1, 0xa2, 0xa3, 0xa4,

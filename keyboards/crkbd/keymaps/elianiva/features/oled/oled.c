@@ -189,6 +189,16 @@ void render_mod_status_ctrl_shift(uint8_t modifiers) {
     }
 }
 
+void render_caps_state(void) {
+    if (led_usb_state.caps_lock) {
+        oled_write_P(PSTR("CAPSL"), false);
+    } else if (is_caps_word_on()) {
+        oled_write_P(PSTR("CAPSW"), false);
+    } else {
+        oled_write_P(PSTR("NOCAP"), false);
+    }
+}
+
 bool oled_task_user(void) {
     led_usb_state = host_keyboard_led_state();
     if (is_keyboard_master()) {
@@ -198,10 +208,12 @@ bool oled_task_user(void) {
         render_line();
         render_layer_state();
         render_line();
+        render_caps_state();
+        render_line();
         render_bocchi_playing_guitar(0, 11);
     } else {
         render_line();
-        render_bocchi_logo();
+        render_kessoku_logo();
         render_line();
         render_bocchi_playing_guitar(0, 11);
     }
