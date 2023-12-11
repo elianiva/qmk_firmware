@@ -4,6 +4,8 @@
 uint8_t current_bocchi_frame = 0;
 uint32_t anim_bocchi_timer = 0;
 
+#ifdef OLED_ENABLE
+
 void render_kessoku_logo(void) {
     static const char PROGMEM kessoku_logo[] = {
         0x80, 0x81, 0x82, 0x83, 0x84,
@@ -383,3 +385,5 @@ void render_bocchi_playing_guitar(int BOCCHI_FRAME_X, int BOCCHI_FRAME_Y) {
         animate_bocchi();
     }
 }
+
+#endif

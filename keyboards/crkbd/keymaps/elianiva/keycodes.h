@@ -2,7 +2,7 @@
 
 enum layer_names {
     _QWERTY,
-    // _COLEMAK,
+    _COLEMAK,
     _GAMING,
     _NUM,
     _NAV,
@@ -46,5 +46,5 @@ enum layer_names {
 
 // Layer Toggle
 #define L_QWERTY TG(_QWERTY)
-// #define L_COLEMAK TG(_COLEMAK)
+#define L_COLEMAK TG(_COLEMAK)
 #define L_GAMING TG(_GAMING)
