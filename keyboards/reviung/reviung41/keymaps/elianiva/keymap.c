@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUM] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_LBRC,    KC_7,    KC_8,    KC_9, KC_RBRC, XXXXXXX,                      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DEL_FUN,
+      KC_LBRC,    KC_7,    KC_8,    KC_9, KC_RBRC, XXXXXXX,                      XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, DEL_FUN,
   //|--------+--------+--------+--------+--------|-------+-                    |--------+--------+--------+--------+--------+--------|
       KC_SCLN,    KC_4,    KC_5,    KC_6,  KC_EQL, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI,
   //|--------+--------+--------+--------+--------|-------+-                    |--------| -------+--------+--------+--------+--------+-
@@ -68,11 +68,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MOUSE] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ACL0, XXXXXXX,                       XXXXXXX, XXXXXXX, KC_PASTE, KC_COPY, KC_CUT, XXXXXXX,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ACL0, XXXXXXX,                       XXXXXXX, KC_BTN3, KC_PASTE, KC_COPY, KC_CUT, XXXXXXX,
   //|-------+--------+--------+--------+--------|--------+-                    |--------| -------+--------+--------+--------+--------+-
      KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_ACL1, XXXXXXX,                       XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_MNXT,
   //|-------+--------+--------+--------+--------|--------+-                    |--------| -------+--------+--------+--------+--------+-
-     XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, KC_ACL2, XXXXXXX,                       KC_BTN3, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX,
+     XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, KC_ACL2, XXXXXXX,                       XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                XXXXXXX, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN2
                                       //`--------------------------'  `--------------------------'
